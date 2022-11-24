@@ -98,7 +98,11 @@ if [ \$? -eq 0 ]; then
 else
    echo "FAIL"
 fi
-rm top_secret.*
+rm top_secret.enc
+rm top_secret.dec
+rm top_secret.txt
+rm key.bin.enc
+rm key.bin.dec
 EOF
 
 
@@ -267,4 +271,5 @@ create_symlinks() {
 create_symlinks
 
 info "To test everything is ready, run this command:"
+info "           $ gen_my_keys"
 info "           $ test_encode_decode"
